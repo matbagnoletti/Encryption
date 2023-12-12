@@ -49,11 +49,12 @@ public class Matrice {
             if (k == verme.length()) {
                 k = 0;
             }
-            col = (int) fch.charAt(j) - 65;
-            row = (int) verme.charAt(k) - 65;
-            if ((int) fch.charAt(j) == 32) {
-                fcf = fcf + " ";
+
+            if(!Character.isLetter(fch.charAt(j))){
+                fcf = fcf + fch.charAt(j);
             } else {
+                col = (int) fch.charAt(j) - 65;
+                row = (int) verme.charAt(k) - 65;
                 fcf = fcf + mv[row][col];
             }
             k++;
@@ -74,14 +75,18 @@ public class Matrice {
             if (k == verme.length()) {
                 k = 0;
             }
-            row = (int) verme.charAt(k) - 65;
-            for (col = 0; col < 26; col++) {
-                if (mv[row][col] == fcf.charAt(j)) {
-                    char car = (char) (col + 65);
-                    fch += car;
+
+            if(!Character.isLetter(fcf.charAt(j))){
+                fch = fch + fcf.charAt(j);
+            } else {
+                row = (int) verme.charAt(k) - 65;
+                for (col = 0; col < 26; col++) {
+                    if (mv[row][col] == fcf.charAt(j)) {
+                        char car = (char) (col + 65);
+                        fch += car;
+                    }
                 }
             }
-
             k++;
         }
 

@@ -7,7 +7,7 @@ import java.io.*;
 
 class Main {
   public static void main(String[] args) {
-    Matrice matrice = new Matrice("TPSIT");
+    Matrice matrice = new Matrice("");
 
     /* creazione dei 4 thread (vermi) utilizzando istanze (vigenere*) della classe (Vigenere), la quale implementa Runnable */
     Vigenere vigenere1 = new Vigenere(0, 13, 0, 13, matrice);
@@ -45,42 +45,43 @@ class Main {
     BufferedReader reader = new BufferedReader(input);
 
     /* menù cifratura e decifratura */
-    int scelta = 0;
+    int scelta;
     try{
       System.out.println("*** MENU' ***\n1) Cifrare\n2) Decifrare\n0) Exit\n");
       scelta = Integer.parseInt(reader.readLine());
     } catch (IOException ex){
       System.err.println("Errore nell'inserimento della scelta nel menù!");
+      scelta = 0;
     }
 
     if (scelta == 1){
-      File file = null;
-      String username = "";
+      File fileC = null;
+      String idC = "";
 
       /* richiedo l'username dell'utente per la creazione di un suo file di cifratura */
       do {
 
-        if(file != null){
+        if(fileC != null){
           System.out.println("Attenzione! Lo username inserito non è utilizzabile");
         }
 
         try {
           System.out.println("Inserisci uno username (deve essere univoco - serve alla creazione del file di cifratura)");
-          username = reader.readLine();
+          idC = reader.readLine();
         } catch (IOException ex) {
-          System.err.println("Errore nell'inserimento dello username");
+          System.err.println("Errore nell'inserimento dell'id del file da cifrare");
         }
 
         /* verifico l'esistenza di un file dell'utente */
-        file = new File(username + ".txt");
+        fileC = new File(idC + ".txt");
 
-      } while (file.exists() && file.isFile());
+      } while (fileC.exists() && fileC.isFile());
 
       /* creazione del file di cifratura */
-      file = new File(username + ".txt");
+      fileC = new File(idC + ".txt");
       FileWriter writer = null;
       try {
-        writer = new FileWriter(file);
+        writer = new FileWriter(fileC);
       } catch (IOException e) {
         System.out.println("Errore nella creazione del file di cifratura!");
       }
@@ -89,6 +90,7 @@ class Main {
       try {
         System.out.print("Inserisci la chiave di cifratura: ");
         matrice.verme = reader.readLine();
+        matrice.verme = matrice.verme.toUpperCase();
       } catch (IOException ex){
         System.err.println("Errore nell'inserimento della chiave!");
       }
@@ -101,6 +103,8 @@ class Main {
       } catch (IOException ex){
         System.err.println("Errore nell'inserimento del testo!");
       }
+
+      testoInChiaro = testoInChiaro.toUpperCase();
 
       /* cifratura */
       String testoCifrato = matrice.cifra(testoInChiaro);
@@ -125,7 +129,50 @@ class Main {
       }
 
     } else if (scelta == 2){
-        //TODO: decifratura
+      File fileD = null;
+      String idD = "";
+
+      /* richiedo l'username dell'utente per la ricerca del file da decifrare */
+      try {
+        System.out.println("Inserisci l'id del file da decifrare");
+        idD = reader.readLine();
+      } catch (IOException ex) {
+        System.err.println("Errore nell'inserimento dell'id del file da decifrare");
+      }
+
+      /* verifico l'esistenza del file richiesto */
+      fileD = new File(idD + ".txt");
+      if(fileD.exists() && fileD.isFile()){
+
+        /* leggo il file */
+        String testoCifrato = "";
+        try {
+          FileReader fileReader = new FileReader(fileD);
+          BufferedReader bufferedReader = new BufferedReader(fileReader);
+          String line = null;
+          while ((line = bufferedReader.readLine()) != null) {
+            testoCifrato += line;
+          }
+          bufferedReader.close();
+        } catch (IOException e) {
+          System.out.println("Errore nella lettura del file!");
+        }
+
+        /* inserimento della parola chiave per la cifratura-decifratura */
+        try {
+          System.out.print("Inserisci la chiave di decifratura: ");
+          matrice.verme = reader.readLine();
+          matrice.verme = matrice.verme.toUpperCase();
+        } catch (IOException ex){
+          System.err.println("Errore nell'inserimento della chiave!");
+        }
+
+        /* decifro il testo */
+        String testoInChiaro = matrice.deCifra(testoCifrato);
+        System.out.println("Testo decifrato: " + testoInChiaro);
+      } else {
+        System.err.println("Errore! Il file richiesto non esiste!");
+      }
     }
   }
 }
