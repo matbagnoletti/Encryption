@@ -3,7 +3,7 @@
 > [!NOTE]
 > Versione 1.0
 > 
-> Autore:  [**Matteo Bagnoletti Tini**](https://github.com/matbagnoletti)
+> Autore: [**Matteo Bagnoletti Tini**](https://github.com/matbagnoletti)
 > 
 > Docenti: [**prof.ssa Monica Ciuchetti**](https://github.com/mciuchetti); prof.ssa Ilaria Fioroni.
 > 
