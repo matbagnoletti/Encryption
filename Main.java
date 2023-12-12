@@ -1,5 +1,4 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.*;
 
 /**
  * @author (fork) Matteo Bagnoletti Tini
@@ -11,7 +10,6 @@ class Main {
     Matrice matrice = new Matrice("TPSIT");
 
     /* creazione dei 4 thread (vermi) utilizzando istanze (vigenere*) della classe (Vigenere), la quale implementa Runnable */
-    
     Vigenere vigenere1 = new Vigenere(0, 13, 0, 13, matrice);
     Thread thread1 = new Thread(vigenere1);
 
@@ -42,15 +40,92 @@ class Main {
       matrice.stampa();
     }
 
-    /* inserimento della parola chiave per la cifratura-decifratura */
+    /* creazione degli oggetti per la lettura da tastiera */
     InputStreamReader input = new InputStreamReader(System.in);
     BufferedReader reader = new BufferedReader(input);
-    String chiave = "";
+
+    /* menù cifratura e decifratura */
+    int scelta = 0;
     try{
-      System.out.print("Inserisci la chiave di cifratura: ");
-      chiave = reader.readLine();
-    } catch (Exception ex){
-      System.err.println("Errore nell'inserimento della chiave!");
+      System.out.println("*** MENU' ***\n1) Cifrare\n2) Decifrare\n0) Exit\n");
+      scelta = Integer.parseInt(reader.readLine());
+    } catch (IOException ex){
+      System.err.println("Errore nell'inserimento della scelta nel menù!");
+    }
+
+    if (scelta == 1){
+      File file = null;
+      String username = "";
+
+      /* richiedo l'username dell'utente per la creazione di un suo file di cifratura */
+      do {
+
+        if(file != null){
+          System.out.println("Attenzione! Lo username inserito non è utilizzabile");
+        }
+
+        try {
+          System.out.println("Inserisci uno username (deve essere univoco - serve alla creazione del file di cifratura)");
+          username = reader.readLine();
+        } catch (IOException ex) {
+          System.err.println("Errore nell'inserimento dello username");
+        }
+
+        /* verifico l'esistenza di un file dell'utente */
+        file = new File(username + ".txt");
+
+      } while (file.exists() && file.isFile());
+
+      /* creazione del file di cifratura */
+      file = new File(username + ".txt");
+      FileWriter writer = null;
+      try {
+        writer = new FileWriter(file);
+      } catch (IOException e) {
+        System.out.println("Errore nella creazione del file di cifratura!");
+      }
+
+      /* inserimento della parola chiave per la cifratura-decifratura */
+      try {
+        System.out.print("Inserisci la chiave di cifratura: ");
+        matrice.verme = reader.readLine();
+      } catch (IOException ex){
+        System.err.println("Errore nell'inserimento della chiave!");
+      }
+
+      /* inserimento del messaggio da cifrare */
+      String testoInChiaro = "";
+      try {
+        System.out.print("Inserisci il testo da cifrare: ");
+        testoInChiaro = reader.readLine();
+      } catch (IOException ex){
+        System.err.println("Errore nell'inserimento del testo!");
+      }
+
+      /* cifratura */
+      String testoCifrato = matrice.cifra(testoInChiaro);
+
+      /* salvataggio su File */
+      if(writer != null){
+
+        try {
+          writer.write(testoCifrato);
+        } catch (IOException e) {
+          System.out.println("Errore nel salvataggio su File!");
+        }
+
+        try {
+          writer.close();
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        }
+
+      } else {
+        System.err.println("Errore nel salvataggio su file!");
+      }
+
+    } else if (scelta == 2){
+        //TODO: decifratura
     }
   }
 }
