@@ -16,5 +16,6 @@ Questo progetto è un semplice programma di cifratura/decifratura che utilizza l
 Il progetto si compone dalle seguenti classi:
 - [**Main**](Main.java): classe principale del programma, contiene il metodo main.
 - [**Vigenere**](Vigenere.java): classe che contiene i metodi per cifrare e decifrare un messaggio.
+- [**Matrice**](Matrice.java): classe che contiene i metodi per creare la matrice di Vigenère e per cifrare e decifrare un messaggio.
 
 ... da completare ...
