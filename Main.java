@@ -38,5 +38,7 @@ class Main {
     } finally {
       matrice.stampa();
     }
+
+    /* inserimento della parola chiave per la cifratura-decifratura */
   }
 }
