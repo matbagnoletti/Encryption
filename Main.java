@@ -47,7 +47,7 @@ class Main {
     /* menù cifratura e decifratura */
     int scelta;
     try{
-      System.out.println("*** MENU' ***\n1) Cifrare\n2) Decifrare\n0) Exit\n");
+      System.out.print("*** MENU' ***\n1) Cifrare\n2) Decifrare\naltro) Exit\n> ");
       scelta = Integer.parseInt(reader.readLine());
     } catch (IOException ex){
       System.err.println("Errore nell'inserimento della scelta nel menù!");
@@ -66,19 +66,19 @@ class Main {
         }
 
         try {
-          System.out.println("Inserisci uno username (deve essere univoco - serve alla creazione del file di cifratura)");
+          System.out.print("Inserisci uno username (deve essere univoco - serve alla creazione del file di cifratura): ");
           idC = reader.readLine();
         } catch (IOException ex) {
           System.err.println("Errore nell'inserimento dell'id del file da cifrare");
         }
 
         /* verifico l'esistenza di un file dell'utente */
-        fileC = new File(idC + ".txt");
+        fileC = new File(idC);
 
       } while (fileC.exists() && fileC.isFile());
 
       /* creazione del file di cifratura */
-      fileC = new File(idC + ".txt");
+      fileC = new File(idC);
       FileWriter writer = null;
       try {
         writer = new FileWriter(fileC);
@@ -134,14 +134,14 @@ class Main {
 
       /* richiedo l'username dell'utente per la ricerca del file da decifrare */
       try {
-        System.out.println("Inserisci l'id del file da decifrare");
+        System.out.print("Inserisci lo username del file da decifrare: ");
         idD = reader.readLine();
       } catch (IOException ex) {
         System.err.println("Errore nell'inserimento dell'id del file da decifrare");
       }
 
       /* verifico l'esistenza del file richiesto */
-      fileD = new File(idD + ".txt");
+      fileD = new File(idD);
       if(fileD.exists() && fileD.isFile()){
 
         /* leggo il file */
