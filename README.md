@@ -10,7 +10,7 @@
 > Corso 5AINF a.s. 2023/2024
 
 ## Descrizione
-Questo progetto è un semplice programma di cifratura/decifratura. Esso utilizza l'algoritmo del [**cifrario di Vigenère**](https://it.wikipedia.org/wiki/Cifrario_di_Vigen%C3%A8re) per cifrare e decifrare messaggi.
+Questo progetto è un semplice programma di cifratura/decifratura che utilizza l'algoritmo del [**cifrario di Vigenère**](https://it.wikipedia.org/wiki/Cifrario_di_Vigen%C3%A8re).
 
 ## Struttura
 Il progetto si compone dalle seguenti classi:
