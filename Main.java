@@ -1,7 +1,7 @@
 /**
-* @author (fork) Matteo Bagnoletti Tini
-* @see https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html
-*/
+ * @author (fork) Matteo Bagnoletti Tini
+ * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html">Documentazione Oracle Thread</a>
+ */
 
 class Main {
   public static void main(String[] args) {
