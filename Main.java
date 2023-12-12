@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * @author (fork) Matteo Bagnoletti Tini
  * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html">Documentazione Oracle Thread</a>
@@ -40,5 +43,14 @@ class Main {
     }
 
     /* inserimento della parola chiave per la cifratura-decifratura */
+    InputStreamReader input = new InputStreamReader(System.in);
+    BufferedReader reader = new BufferedReader(input);
+    String chiave = "";
+    try{
+      System.out.print("Inserisci la chiave di cifratura: ");
+      chiave = reader.readLine();
+    } catch (Exception ex){
+      System.err.println("Errore nell'inserimento della chiave!");
+    }
   }
 }
