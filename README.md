@@ -5,7 +5,9 @@
 > 
 > Autore: [**Matteo Bagnoletti Tini**](https://github.com/matbagnoletti)
 > 
-> Docenti: [**prof.ssa Monica Ciuchetti**](https://github.com/mciuchetti); prof.ssa Ilaria Fioroni.
+> Docente: [**prof.ssa Monica Ciuchetti**](https://github.com/mciuchetti)
+> 
+> Docente di laboratorio: prof.ssa Ilaria Fioroni.
 > 
 > Corso: TPSIT 5AINF a.s. 2023/2024
 
