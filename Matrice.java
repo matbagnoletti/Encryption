@@ -27,8 +27,8 @@ public class Matrice {
     }
 
     public void stampa() {
-        int r = 0;
-        int c = 0;
+        int r;
+        int c;
 
         for (r = 0; r < 26; r++) {
             for (c = 0; c < 26; c++) {
@@ -39,9 +39,9 @@ public class Matrice {
     }
 
     public String cifra(String fch) {
-        String fcf;
+        StringBuilder fcf;
         int k, j, col, row;
-        fcf = "";
+        fcf = new StringBuilder();
         k = 0;
 
         for (j = 0; j < fch.length(); j++) {
@@ -51,20 +51,20 @@ public class Matrice {
             }
 
             if(!Character.isLetter(fch.charAt(j))){
-                fcf = fcf + fch.charAt(j);
+                fcf.append(fch.charAt(j));
             } else {
                 col = (int) fch.charAt(j) - 65;
                 row = (int) verme.charAt(k) - 65;
-                fcf = fcf + mv[row][col];
+                fcf.append(mv[row][col]);
             }
             k++;
         }
 
-        return (fcf);
+        return (fcf.toString());
     }
 
     public String deCifra(String fcf) {
-        String fch = "";
+        StringBuilder fch = new StringBuilder();
 
         int k, j, col, row;
 
@@ -77,19 +77,19 @@ public class Matrice {
             }
 
             if(!Character.isLetter(fcf.charAt(j))){
-                fch = fch + fcf.charAt(j);
+                fch.append(fcf.charAt(j));
             } else {
                 row = (int) verme.charAt(k) - 65;
                 for (col = 0; col < 26; col++) {
                     if (mv[row][col] == fcf.charAt(j)) {
                         char car = (char) (col + 65);
-                        fch += car;
+                        fch.append(car);
                     }
                 }
             }
             k++;
         }
 
-        return (fch);
+        return (fch.toString());
     }
 }

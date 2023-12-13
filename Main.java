@@ -129,7 +129,7 @@ class Main {
       }
 
     } else if (scelta == 2){
-      File fileD = null;
+      File fileD;
       String idD = "";
 
       /* richiedo l'username dell'utente per la ricerca del file da decifrare */
@@ -145,13 +145,13 @@ class Main {
       if(fileD.exists() && fileD.isFile()){
 
         /* leggo il file */
-        String testoCifrato = "";
+        StringBuilder testoCifrato = new StringBuilder();
         try {
           FileReader fileReader = new FileReader(fileD);
           BufferedReader bufferedReader = new BufferedReader(fileReader);
-          String line = null;
+          String line;
           while ((line = bufferedReader.readLine()) != null) {
-            testoCifrato += line;
+            testoCifrato.append(line);
           }
           bufferedReader.close();
         } catch (IOException e) {
@@ -168,7 +168,7 @@ class Main {
         }
 
         /* decifro il testo */
-        String testoInChiaro = matrice.deCifra(testoCifrato);
+        String testoInChiaro = matrice.deCifra(testoCifrato.toString());
         System.out.println("Testo decifrato: " + testoInChiaro);
       } else {
         System.err.println("Errore! Il file richiesto non esiste!");
