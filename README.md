@@ -20,7 +20,7 @@ Questo progetto è un semplice programma di cifratura/decifratura che utilizza l
 Il progetto si compone dalle seguenti classi:
 - [**Main**](Main.java): classe principale del programma, che contiene il metodo main.
 - [**Vigenere**](Vigenere.java): classe che contiene i metodi popolare la matrice di Vigenère utilizzata per cifrare e decifrare. Implementa l'interfaccia [**Runnable**](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html).
-- [**Matrice**](Matrice.java): classe che contiene la matrice di Vigenère. Contiene i metodi cifrare e decifrare un messaggio.
+- [**Matrice**](Matrice.java): classe che contiene la matrice di Vigenère. Contiene i metodi per cifrare e decifrare un messaggio.
 
 ## Utilizzo
 Per utilizzare il programma è necessario compilare il file [**Main.java**](Main.java) e avviare il programma.
@@ -29,7 +29,7 @@ Al primo avvio 4 Thread si occuperanno di popolare la matrice e la stamperanno a
 
 Verrà successivamente chiesto di scegliere tramite menù tra (1) *cifrare*, (2) *decifrare* o (altro) *terminare il programma*.
 
-Entrambe le opzioni richiederanno di:
+Entrambe le opzioni (1 e 2) richiederanno di:
 
 1. inserire uno username `<id>` che verrà utilizzato per identificare il *file di output*.
 
