@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
- *
  * @author Monica Ciuchetti
+ * @version 1.0
+ * @since 1.0
+ * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html">Documentazione Oracle Runnable</a>
  */
 public class Vigenere implements Runnable{
 
