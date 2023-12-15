@@ -1,7 +1,7 @@
 # Encryption
 
 > [!NOTE]
-> Versione 1.0
+> Versione 1.1
 > 
 > Autore: [**Matteo Bagnoletti Tini**](https://github.com/matbagnoletti)
 > 
