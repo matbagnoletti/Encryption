@@ -27,15 +27,20 @@ Per utilizzare il programma è necessario compilare il file [**Main.java**](Main
 
 Al primo avvio 4 Thread si occuperanno di popolare la matrice e la stamperanno a video.
 
-Verrà successivamente chiesto di scegliere tramite menù tra (1) *cifrare*, (2) *decifrare* o (altro) *terminare il programma*.
+Verrà successivamente chiesto di scegliere tramite menù tra (1) *cifrare*, (2) *decifrare* o (0) *terminare il programma*.
 
 Entrambe le opzioni (1 e 2) richiederanno di:
 
-1. inserire uno username `<id>` che verrà utilizzato per identificare il *file di output*.
+1. Inserire uno username `<id>` che verrà utilizzato per identificare il *file di output*.
 
-2. inserire una chiave `<verme>` di cifratura, che verrà utilizzata per cifrare o decifrare i messaggi.
+2. Inserire una chiave `<verme>` di cifratura, che verrà utilizzata per cifrare o decifrare i messaggi.
 
-3. inserire un messaggio da cifrare `<testoInChiaro>` o decifrare `<testoCifrato>`.
+3. Inserire un messaggio da cifrare `<testoInChiaro>` o decifrare `<testoCifrato>`.
 
 > [!NOTE]
 > Il file di output si presenta come `<id>` (privo di estensione). Un apposito menù eviterà di inserire un `<id>` già utilizzato per non sovrascrivere, così, un file già esistente.
+
+## Aggioramenti
+
+- [x] Aggiunta di un loop nel menù per scegliere l'opzione da utilizzare.
+- [x] Gestione di eventuali eccezioni generate durante l'inserimento di caratteri non supportati.
