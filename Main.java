@@ -13,7 +13,7 @@ class Main {
     Vigenere vigenere1 = new Vigenere(0, 13, 0, 13, matrice);
     Thread thread1 = new Thread(vigenere1);
 
-    Vigenere vigenere2 = new Vigenere(13, 26, 0, 16, matrice);
+    Vigenere vigenere2 = new Vigenere(13, 26, 0, 13, matrice);
     Thread thread2 = new Thread(vigenere2);
 
     Vigenere vigenere3 = new Vigenere(0, 13, 13, 26, matrice);
