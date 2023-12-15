@@ -38,7 +38,7 @@ public class Matrice {
         }
     }
 
-    public String cifra(String fch) {
+    public String cifra(String fch) throws ArrayIndexOutOfBoundsException {
         StringBuilder fcf;
         int k, j, col, row;
         fcf = new StringBuilder();
