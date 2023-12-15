@@ -40,7 +40,7 @@ Entrambe le opzioni (1 e 2) richiederanno di:
 > [!NOTE]
 > Il file di output si presenta come `<id>` (privo di estensione). Un apposito menù eviterà di inserire un `<id>` già utilizzato per non sovrascrivere, così, un file già esistente.
 
-## Aggioramenti
+## Aggiornamenti (v.1.1)
 
 - [x] Aggiunta di un loop nel menù per scegliere l'opzione da utilizzare.
 - [x] Gestione di eventuali eccezioni generate durante l'inserimento di caratteri non supportati.
