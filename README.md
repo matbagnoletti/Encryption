@@ -44,3 +44,6 @@ Entrambe le opzioni (1 e 2) richiederanno di:
 
 - [x] Aggiunta di un loop nel menù per scegliere l'opzione da utilizzare.
 - [x] Gestione di eventuali eccezioni generate durante l'inserimento di caratteri non supportati.
+
+## Licenza d'uso
+La seguente repository (e tutte le sue versioni) sono rilasciate sotto la [**MB General Copyleft License**](LICENSE).
