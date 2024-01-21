@@ -1,7 +1,7 @@
 <h1 align="center">Encryption</h1>
 
 <p align="center" style="font-family: monospace">Made by <a href="https://github.com/matbagnoletti">@matbagnoletti</a></p>
-<p align="center" style="font-family: monospace">Docenti: prof.ssa <a href="https://github.com/matbagnoletti">@mciuchetti</a> e prof.ssa Fioroni</p>
+<p align="center" style="font-family: monospace">Docenti: prof.ssa <a href="https://github.com/mciuchetti">@mciuchetti</a> e prof.ssa Fioroni</p>
 <p align="center" style="font-family: monospace">Corso TPSIT a.s. 2023/2024, <a href="https://www.avoltapg.edu.it/">ITTS A. Volta (PG)</a></p>
 <p align="center">
     <img src="https://img.shields.io/github/last-commit/matbagnoletti/JavaFileManager?style=for-the-badge" alt="Ultimo commit">
