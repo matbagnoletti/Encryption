@@ -1,4 +1,4 @@
-<h1 align="center">JavaFileManager</h1>
+<h1 align="center">Encryption</h1>
 
 <p align="center" style="font-family: monospace">Made by <a href="https://github.com/matbagnoletti">@matbagnoletti</a></p>
 <p align="center" style="font-family: monospace">Docenti: prof.ssa <a href="https://github.com/matbagnoletti">@mciuchetti</a> e prof.ssa Fioroni</p>
