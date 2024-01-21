@@ -8,19 +8,6 @@
     <img src="https://img.shields.io/github/languages/top/matbagnoletti/JavaFileManager?style=for-the-badge" alt="Linguaggio">
 </p>
 
-> [!NOTE]
-> Versione 1.1
-> 
-> Autore: [**Matteo Bagnoletti Tini**](https://github.com/matbagnoletti)
-> 
-> Docente: [**prof.ssa Monica Ciuchetti**](https://github.com/mciuchetti)
-> 
-> Docente di laboratorio: prof.ssa Ilaria Fioroni
-> 
-> Corso: TPSIT 5AINF a.s. 2023/2024
-> 
-> Istituto: [**ITTS A. Volta**](https://www.avoltapg.edu.it/), Perugia (PG), Italia
-
 ## Descrizione
 Questo progetto è un semplice programma di cifratura/decifratura che utilizza l'algoritmo del [**cifrario di Vigenère**](https://it.wikipedia.org/wiki/Cifrario_di_Vigen%C3%A8re).
 
